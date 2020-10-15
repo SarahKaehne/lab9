@@ -44,10 +44,10 @@ app.delete('/movies/:id', movies.deleteOne);
 //4.Remove an actor from the list of actors in a movie
 app.delete('/movies/:mid/:aid/ids', movies.delActorMovie);
 //5.Add an existing actor to the list of actors in a movie
-app.post('/movies/:id/actors', movies.addActor);
+app.post('/movies/:aid/:mid', movies.addActor);
 //6.Retrieve (GET) all the movies produced between year1 and year2, where year1>year2
 app.get('/movies/:year1/:year2', movies.movieYear);
 //9.Delete all the movies that are produced between two years.
-app.delete('/delmovies', movies.deleteBetween);
+app.delete('/delmovies/:year1/:year2', movies.deleteBetween);
 //lab9 del older
 app.delete('/movies/:year/delOlder', movies.deleteOlderThan);

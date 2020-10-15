@@ -47,10 +47,10 @@ module.exports = {
         });
     },
     addActor: function (req, res) {
-        Movie.findOne({ _id: req.params.id }, function (err, movie) {
+        Movie.findOne({ _id: req.params.mid }, function (err, movie) {
             if (err) return res.status(400).json(err);
             if (!movie) return res.status(404).json();
-            Actor.findOne({ _id: req.body.id }, function (err, actor) {
+            Actor.findOne({ _id: req.params.aid }, function (err, actor) {
                 if (err) return res.status(400).json(err);
                 if (!actor) return res.status(404).json();
                 movie.actors.push(actor._id);
@@ -68,7 +68,7 @@ module.exports = {
         });
     },
     deleteBetween: function (req,res){
-        Movie.deleteMany({year: {$gte: req.body.year2, $lte: req.body.year1}}, function (err, movies) {
+        Movie.deleteMany({year: {$gte: req.params.year1, $lte: req.params.year2}}, function (err, movies) {
             if (err) return res.status(400).json(err);
             res.json(movies);
         });

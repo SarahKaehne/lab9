@@ -17,6 +17,9 @@ export class ActorComponent implements OnInit {
   mYear: number = 0;
   movieId: string = "";
   delYear: number = 0;
+  delYearStart: number = 0;
+  delYearEnd: number = 0;
+  
   constructor(private dbService: DatabaseService) {}
   //Get all Actors
   onGetActors() {
@@ -100,5 +103,11 @@ export class ActorComponent implements OnInit {
     this.dbService.addActorToMovie(this.actorId, this.movieId).subscribe(result => {
       this.onGetMovies();
     })
+  }
+  //Delete Movie Year
+  onDeleteMovieBetweenYear(){
+    this.dbService.deleteMovieBetweenYear(this.delYearStart, this.delYearEnd).subscribe(result => {
+      this.onGetMovies();
+    });
   }
 }

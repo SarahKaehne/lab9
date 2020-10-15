@@ -54,4 +54,8 @@ export class DatabaseService {
     let url = "/movies/" + aid + "/" + mid;
     return this.http.post(url, httpOptions)
   }
+  deleteMovieBetweenYear(year1: number, year2:number){
+    let url = "/delmovies/" + year1 + "/" + year2;
+    return this.http.delete(url, httpOptions)
+  }
 }
