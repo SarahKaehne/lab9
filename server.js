@@ -51,3 +51,5 @@ app.get('/movies/:year1/:year2', movies.movieYear);
 app.delete('/delmovies/:year1/:year2', movies.deleteBetween);
 //lab9 del older
 app.delete('/movies/:year/delOlder', movies.deleteOlderThan);
+//5.Add an existing movie to the list of movies in a actor
+app.post('/actors/:mid/:aid', movies.addMovieActor);

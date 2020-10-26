@@ -58,4 +58,8 @@ export class DatabaseService {
     let url = "/delmovies/" + year1 + "/" + year2;
     return this.http.delete(url, httpOptions)
   }
+  addMovieToActor(mid: string, aid:string){
+    let url = "/actors/" + mid + "/" + aid;
+    return this.http.post(url, httpOptions)
+  }
 }

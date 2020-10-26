@@ -14,6 +14,7 @@ import { DeletemovieComponent } from './deletemovie/deletemovie.component';
 import { ListmoviesComponent } from './listmovies/listmovies.component';
 import { ActormovieComponent } from './actormovie/actormovie.component';
 import { ViewnfComponent } from './viewnf/viewnf.component';
+import { MovieactorComponent } from './movieactor/movieactor.component';
 const appRoutes: Routes = [
   { path: "listactors", component: ListactorsComponent },
   { path: "addactor", component: AddactorComponent },
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
   { path: "deletemovie", component: DeletemovieComponent },
   { path: "listmovies", component: ListmoviesComponent },
   { path: "actormovie", component: ActormovieComponent },
+  { path: "movieactor", component: MovieactorComponent },
   { path: "**", component: ViewnfComponent },
   { path: "", redirectTo: "/listactors", pathMatch: "full" }
 ];
@@ -38,6 +40,7 @@ const appRoutes: Routes = [
     ListmoviesComponent,
     ActormovieComponent,
     ViewnfComponent,
+    MovieactorComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes, {useHash: true}),
