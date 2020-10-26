@@ -1,0 +1,35 @@
+<div class="section">
+    <div class="row">
+        <div class="col">
+            <p class="lead">Actors</p>
+            <table class="table table-striped">
+                <tr>
+                    <th>Name</th>
+                    <th>Birth Year</th>
+                    <th>Select</th>
+                </tr>
+                <tr *ngFor="let item of actorsDB">
+                    <td>{{item.name}}</td>
+                    <td>{{item.bYear}}</td>
+                    <td><button type="submit" class="btn btn-primary" (click)="onSelectUpdateActor(item)">Select</button></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col">
+            <p class="lead">Movies</p>
+            <table class="table table-striped">
+                <tr>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Select</th>
+                </tr>
+                <tr *ngFor="let item of moviesDB">
+                    <td>{{item.title}}</td>
+                    <td>{{item.year}}</td>
+                    <td><button type="submit" class="btn btn-primary" (click)="onSelectUpdateMovie(item)">Select</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="addActorToMovie()">Add Actor to Movie</button>
+</div>
